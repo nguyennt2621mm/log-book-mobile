@@ -1,40 +1,51 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
-
+    android:padding="16dp">
     <TextView
-        android:id="@+id/taskTitle"
+        android:id="@+id/todayLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tasks"
+        android:text="Today"
         android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp" />
-    <Button
-        android:id="@+id/hideCompletedButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hide Completed"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="16dp"
-        android:layout_below="@id/taskTitle"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="16dp"/>
 
-    <ListView
-        android:id="@+id/taskList"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewToday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/hideCompletedButton"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="8dp" />
+        android:layout_below="@id/todayLabel"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/tomorrowLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tomorrow"
+        android:textSize="24sp"
+        android:layout_below="@id/recyclerViewToday"
+        android:layout_marginTop="16dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewTomorrow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tomorrowLabel"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/hideCompleted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/recyclerViewTomorrow"
+        android:layout_marginBottom="16dp"
+        android:text="Hide completed"
+        android:background="#CCFFFF"
+        android:textSize="16sp"/>
 
     <ImageButton
-        android:id="@+id/addTaskButton"
+        android:id="@+id/fab"
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:src="@drawable/ic_add"
