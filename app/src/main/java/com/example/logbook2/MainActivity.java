@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerViewToday.setAdapter(taskAdapterToday);
         recyclerViewTomorrow.setAdapter(taskAdapterTomorrow);
-
+//abv
         TextView hideCompletedButton = findViewById(R.id.hideCompleted);
         hideCompletedButton.setOnClickListener(v -> {
             hideCompleted = !hideCompleted;
